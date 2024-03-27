@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Website</title>
+  <style>
+    
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%; 
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to right, #ffffcc, #f9d0fb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column; 
+    }
+    
+    header {
+      background-color:  #ee765d ;
+      color: #fff;
+      padding: 4px 0;
+      text-align: center;
+      position: relative; 
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px; 
+    }
+    
+    nav a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    nav a:hover {
+      background-color: grey;
+      border-radius: 10px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column; 
+    }
+    
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap:60px;
+      flex: 1; 
+      
+    }
+    
+    .content img {
+      max-width: 133%;
+      max-height: 100%;
+      margin-bottom: 100px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    text {
+      display: flex;
+      justify-content: center;
+      gap: 40px; 
+    }
+
+    .myButton {
+    background-color: #ee765d;
+    border: none;
+    color: white;
+    padding: 10px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 60px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .flex-container.row {
+    flex-direction: row;
+  }
+
+
+  .container-bottom {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 20px;
+        
+    }
+    
+    .image-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 10px; 
+    }
+    .column img {
+        width: 100%;
+        display: block;
+    }
+    .card {
+        flex-basis: calc(38% - 5px);
+        max-height: 280px;
+        background-color: #ee765d;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 58px;
+    }
+    
+    .menu-toggle img {
+      width: 30px; 
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    
+    @media screen and (min-width: 769px) {
+      .menu-toggle {
+        display: none; 
+      }
+      
+      nav {
+        display: flex;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        background-color: #ee765d;
+      }
+      
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Order</a>
+      <a href="#">Food</a>
+      <a href="#">Restaurant</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    
+    <div class="menu-toggle"><img src="menu-bar.png" alt="Hamburger Menu"></div>
+  </header>
+  
+  <div class="container">
+    <div class="content">
+      <div style="margin-top:120px">
+        <h1 style="margin-bottom: 15%;font-size:400%;">LOREM IPSUM</h1>
+        <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            id est vitae dolor rhoncus tristique. Maecenas metus quam,
+            rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+            dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+            Quisque congue sem nec justo mollis, in tincidunt erat pretium.
+            Sed pulvinar, massa ac porta viverra.</Text>
+
+            <button class="myButton">Click me</button>
+      </div>
+      
+      <img style="height: 600px;" src="pexels-robin-stickel-70497.jpg" alt="Placeholder Image 2">
+      
+    </div>
+    
+  </div>
+  
+  <div class="container-bottom">
+    <div class="column">
+        <div class="image-container">
+            <img style="width: 240px; height: 200px; margin-bottom: 10px;" src="pexels-rachel-claire-6752433.jpg" alt="Image 1">
+            <img style="width: 240px; height: 200px;" src="pexels-eva-bronzini-6141651.jpg" alt="Image 2">
+        </div>
+    </div>
+    <div class="column">
+        <div class="image-container">
+            <img style="width: 240px; height: 400px;margin-left: 0px;" src="pexels-mister-mister-3434523.jpg" alt="Image 3">
+        </div>
+    </div>
+    <div class="card">
+        <Text style="justify-content: left;margin-bottom: 10px;">LOREM IPSUM</Text>
+        <Text style="font-size:50px;font-weight: 600;justify-content: left;margin-bottom: -20px;">LOREM IPSUM </Text>
+        <Text style="font-size:50px;font-weight: 600;;justify-content: left;">SET ADEMIR</Text>
+        <Text style="justify-content: left;margin-top: 15px;">Click <img style="margin-left: -30px;padding-bottom: 10px;" src="icons8-arrow-30.png" alt="Image 3"></Text>
+    </div>
+</div>
+ 
+  
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
