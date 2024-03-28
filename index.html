@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Website</title>
   <style>
-    
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -27,17 +26,18 @@
     }
     
     header {
-      background-color:  #ee765d ;
+      background-color: #ee765d;
       color: #fff;
       padding: 4px 0;
       text-align: center;
-      position: relative; 
+      position: relative;
+      width: 100%; /* Ensuring the header covers the whole horizontal space */
     }
     
     nav {
       display: flex;
       justify-content: center;
-      gap: 40px; 
+      gap: 40px;
     }
     
     nav a {
@@ -66,15 +66,14 @@
     .content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap:60px;
+      gap: 60px;
       flex: 1; 
-      
     }
     
     .content img {
-      max-width: 133%;
-      max-height: 100%;
-      margin-bottom: 100px;
+      max-width: 100%; /* Adjusted to fit header width */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 60px; /* Adjusted margin bottom */
     }
     
     footer {
@@ -91,49 +90,45 @@
     }
 
     .myButton {
-    background-color: #ee765d;
-    border: none;
-    color: white;
-    padding: 10px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 60px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+      background-color: #ee765d;
+      border: none;
+      color: white;
+      padding: 10px 80px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 60px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
 
-  .flex-container.row {
-    flex-direction: row;
-  }
-
-
-  .container-bottom {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin: 20px;
-        
+    .container-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px;
     }
     
     .image-container {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        margin-bottom: 10px; 
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 10px; 
     }
     .column img {
-        width: 100%;
-        display: block;
+      width: 100%;
+      display: block;
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 10px; /* Adjusted margin bottom */
     }
     .card {
-        flex-basis: calc(38% - 5px);
-        max-height: 280px;
-        background-color: #ee765d;
-        padding: 20px;
-        box-sizing: border-box;
-        margin-top: 58px;
+      flex-basis: calc(38% - 5px);
+      max-height: 280px;
+      background-color: #ee765d;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-top: 58px;
     }
     
     .menu-toggle img {
@@ -145,16 +140,6 @@
       cursor: pointer;
     }
     
-    @media screen and (min-width: 769px) {
-      .menu-toggle {
-        display: none; 
-      }
-      
-      nav {
-        display: flex;
-      }
-    }
-    
     @media screen and (max-width: 768px) {
       nav {
         display: none;
@@ -164,17 +149,100 @@
         left: 0;
         width: 100%;
         background-color: #ee765d;
+        padding: 50px;
       }
       
       nav.show {
         display: flex;
+      }
+
+      /* Adjusting header styles for mobile */
+      header {
+        padding: 20px 0;
+      }
+
+      .menu-toggle img {
+        width: 30px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        transform: translateY(0%);
+      }
+
+      /* Adjusting content styles for mobile */
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .content img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .myButton {
+        padding: 10px 40px;
+        margin: 30px 0;
+      }
+
+      .container-bottom {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .column {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .image-container {
+        flex-direction: column;
+      }
+
+      .column img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        flex-basis: auto;
+        margin-top: 30px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card Text {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .card img {
+        margin-left: 0;
+      }
+
+      /* Media query for inline styled images */
+      .column img[style^="width: 240px;"] {
+        width: 100%;
+      }
+
+      .column img[style^="width: 240px; height: 400px;"] {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Media query for bottom three images to fill the screen */
+      .column img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0; /* Remove bottom margin */
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="nav-bar">
       <a href="#">Home</a>
       <a href="#">Order</a>
       <a href="#">Food</a>
@@ -223,14 +291,13 @@
         <Text style="justify-content: left;margin-bottom: 10px;">LOREM IPSUM</Text>
         <Text style="font-size:50px;font-weight: 600;justify-content: left;margin-bottom: -20px;">LOREM IPSUM </Text>
         <Text style="font-size:50px;font-weight: 600;;justify-content: left;">SET ADEMIR</Text>
-        <Text style="justify-content: left;margin-top: 15px;">Click <img style="margin-left: -30px;padding-bottom: 10px;" src="icons8-arrow-30.png" alt="Image 3"></Text>
+        <Text style="justify-content: left;margin-top: 15px;">Click <img style="margin-left: -30px;padding-bottom: 10px;" src="images/icons8-arrow-30.png" alt="Image 3"></Text>
     </div>
-</div>
- 
+  </div>
   
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('nav').classList.toggle('show');
+      document.querySelector('.nav-bar').classList.toggle('show');
     });
   </script>
 </body>
